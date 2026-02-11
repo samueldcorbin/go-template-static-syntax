@@ -1,0 +1,85 @@
+{
+  "scopeName": "text.html.go-template-static-syntax",
+  "name": "Go Template Static Syntax",
+  "patterns": [
+    { "include": "#comment-block" },
+    { "include": "#css-block" },
+    { "include": "#js-block" },
+    { "include": "#ts-block" },
+    { "include": "#go-template-tag" },
+    { "include": "text.html.basic" }
+  ],
+  "repository": {
+    "comment-block": {
+      "name": "comment.block.gohtml",
+      "begin": "\\{\\{-?\\s*/\\*",
+      "end": "\\*/\\s*-?\\}\\}"
+    },
+
+    "css-block": {
+      "begin": "(\\{\\{)(-?\\s*define\\s+\"static-css-[^\"]*\"\\s*-?)(\\}\\})",
+      "end": "(\\{\\{)(-?\\s*end\\s*-?)(\\}\\})",
+      "beginCaptures": {
+        "1": { "name": "punctuation.definition.tag.begin.gohtml" },
+        "2": { "name": "keyword.control.gohtml" },
+        "3": { "name": "punctuation.definition.tag.end.gohtml" }
+      },
+      "endCaptures": {
+        "1": { "name": "punctuation.definition.tag.begin.gohtml" },
+        "2": { "name": "keyword.control.gohtml" },
+        "3": { "name": "punctuation.definition.tag.end.gohtml" }
+      },
+      "contentName": "meta.embedded.block.css",
+      "patterns": [
+        { "include": "#go-template-tag" },
+        { "include": "source.css" }
+      ]
+    },
+
+    "js-block": {
+      "begin": "(\\{\\{)(-?\\s*define\\s+\"static-js-[^\"]*\"\\s*-?)(\\}\\})",
+      "end": "(\\{\\{)(-?\\s*end\\s*-?)(\\}\\})",
+      "beginCaptures": {
+        "1": { "name": "punctuation.definition.tag.begin.gohtml" },
+        "2": { "name": "keyword.control.gohtml" },
+        "3": { "name": "punctuation.definition.tag.end.gohtml" }
+      },
+      "endCaptures": {
+        "1": { "name": "punctuation.definition.tag.begin.gohtml" },
+        "2": { "name": "keyword.control.gohtml" },
+        "3": { "name": "punctuation.definition.tag.end.gohtml" }
+      },
+      "contentName": "meta.embedded.block.javascript",
+      "patterns": [
+        { "include": "#go-template-tag" },
+        { "include": "source.js" }
+      ]
+    },
+
+    "ts-block": {
+      "begin": "(\\{\\{)(-?\\s*define\\s+\"static-ts-[^\"]*\"\\s*-?)(\\}\\})",
+      "end": "(\\{\\{)(-?\\s*end\\s*-?)(\\}\\})",
+      "beginCaptures": {
+        "1": { "name": "punctuation.definition.tag.begin.gohtml" },
+        "2": { "name": "keyword.control.gohtml" },
+        "3": { "name": "punctuation.definition.tag.end.gohtml" }
+      },
+      "endCaptures": {
+        "1": { "name": "punctuation.definition.tag.begin.gohtml" },
+        "2": { "name": "keyword.control.gohtml" },
+        "3": { "name": "punctuation.definition.tag.end.gohtml" }
+      },
+      "contentName": "meta.embedded.block.typescript",
+      "patterns": [
+        { "include": "#go-template-tag" },
+        { "include": "source.ts" }
+      ]
+    },
+
+    "go-template-tag": {
+      "name": "keyword.control.gohtml",
+      "begin": "\\{\\{-?",
+      "end": "-?\\}\\}"
+    }
+  }
+}

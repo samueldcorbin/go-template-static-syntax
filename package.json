@@ -1,0 +1,29 @@
+{
+  "name": "go-template-static-syntax",
+  "displayName": "Go Template Static Syntax",
+  "description": "Syntax highlighting for .gohtml files with embedded CSS, JS, and TS in {{define \"static-*\"}} blocks",
+  "version": "0.1.0",
+  "engines": { "vscode": "^1.75.0" },
+  "categories": ["Programming Languages"],
+  "contributes": {
+    "languages": [
+      {
+        "id": "gohtml",
+        "extensions": [".gohtml"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "gohtml",
+        "scopeName": "text.html.go-template-static-syntax",
+        "path": "./syntaxes/go-template-static-syntax.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.css": "css",
+          "meta.embedded.block.javascript": "javascript",
+          "meta.embedded.block.typescript": "typescript"
+        }
+      }
+    ]
+  }
+}
