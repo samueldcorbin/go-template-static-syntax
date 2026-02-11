@@ -3,6 +3,12 @@
   "displayName": "Go Template Static Syntax",
   "description": "Syntax highlighting for .gohtml files with embedded CSS, JS, and TS in {{define \"static-*\"}} blocks",
   "version": "0.1.0",
+  "publisher": "samueldcorbin",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/samueldcorbin/go-template-static-syntax"
+  },
   "engines": { "vscode": "^1.75.0" },
   "categories": ["Programming Languages"],
   "contributes": {
